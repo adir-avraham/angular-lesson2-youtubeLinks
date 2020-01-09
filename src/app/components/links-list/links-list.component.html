@@ -1,0 +1,20 @@
+<div class="container">
+<div class="row justify-content-md-center">
+    <div class="card shadow-lg" style="width: 25rem;">
+        <iframe class="card-img-top" height="250" [src]="playingSrc | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="card-body">
+        <h5 class="card-title">Movies Trailers</h5>
+        <p class="card-text">Here are some movies trailers you can watch, delete or select as your favorite.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li *ngFor="let link of links" class="list-group-item list-group-item-action" [ngClass]="{'active': link.isSelected}">{{link.name}}
+            <button type="button" class="btn btn-danger btn-sm float-right ml-1" (click)="deleteLink(link.name)">X</button>
+            <button type="button" class="btn btn-primary btn-sm float-right ml-1" (click)="selectLink(link)" *ngIf="!link.isSelected">Like</button>
+            <button type="button" class="btn btn-light btn-sm float-right ml-1" (click)="selectLink(link)" *ngIf="link.isSelected">Dislike</button>
+            <button type="button" class="btn btn-secondary btn-sm float-right" (click)="playLink(link.link)">Play</button>
+        </li>
+
+    </ul>
+   
+</div>
+</div>

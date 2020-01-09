@@ -1,0 +1,1 @@
+export const links = ["https://www.youtube.com/watch?v=EXeTwQWrcwY", "https://www.youtube.com/watch?v=r5X-hFf6Bwo"]
